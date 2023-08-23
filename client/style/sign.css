@@ -1,0 +1,235 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap'); */
+
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Set a minimum height to fill the screen better */
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    backdrop-filter: blur(5px);
+}
+
+.form-container form {
+    width: 50%;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+    animation: slideInRight 1s forwards;
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #1db954; /* Spotify green */
+    margin-bottom: 20px;
+    font-family: 'Spotify', sans-serif;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out;
+    font-family: 'Arial', sans-serif;
+}
+
+input:focus {
+    border-color: #1db954; /* Spotify green */
+    box-shadow: 0 0 5px rgba(29, 185, 84, 0.5);
+}
+
+label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    color: #777;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+    transform: translateY(-25px);
+    font-size: 10px;
+    color: #1db954; /* Spotify green */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1db954; /* Spotify green */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #16863a; /* Darker shade of green */
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Add some spacing between forms */
+#signup-form {
+    margin-top: 0;
+    border-right: none;
+    border-left: 1px solid #ccc;
+    animation: slideInLeft 1s forwards;
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.background-animation {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    animation: backgroundAnimation 60s linear infinite;
+    background-color: #bde3ff;
+}
+
+.scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.sun {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: #f9d71c;
+    border-radius: 50%;
+    top: 5%;
+    left: 5%;
+    animation: sunAnimation 10s linear infinite alternate;
+}
+
+.mountain-range {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.mountain {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    margin: 0 10px;
+    transform: translateY(20px);
+}
+
+.mountain-1 {
+    border-bottom: 200px solid #759e90;
+}
+
+.mountain-2 {
+    border-bottom: 150px solid #63897f;
+}
+
+.mountain-3 {
+    border-bottom: 100px solid #4e6f6a;
+}
+
+.trees {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.tree {
+    width: 60px;
+    height: 150px;
+    background-color: #266d1b;
+    position: relative;
+    transform-origin: bottom;
+    animation: treeAnimation 8s linear infinite alternate;
+}
+
+.tree:before,
+.tree:after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 180px;
+    height: 100px;
+    background-color: #1a5b13;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background-color: #5c9933;
+}
+
+@keyframes backgroundAnimation {
+    from { background-color: #bde3ff; }
+    to { background-color: #1db954; }
+}
+
+@keyframes sunAnimation {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+@keyframes treeAnimation {
+    0% { transform: scaleY(1); }
+    100% { transform: scaleY(0.9); }
+}
